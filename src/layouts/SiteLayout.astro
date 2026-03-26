@@ -1,0 +1,134 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Frontend and Webflow development app' } = Astro.props;
+const user = Astro.locals.user;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script is:inline>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ink: '#0f1115',
+              coal: '#141922',
+              mist: '#9ea5b5',
+              line: '#242d3e',
+              brand: '#4f46e5',
+              brandSoft: '#a8b2ff',
+              glow: '#67e8f9'
+            },
+            fontFamily: {
+              headline: ['Space Grotesk', 'sans-serif'],
+              body: ['Plus Jakarta Sans', 'sans-serif'],
+              label: ['Manrope', 'sans-serif']
+            },
+            boxShadow: {
+              halo: '0 25px 80px rgba(79,70,229,0.25)'
+            }
+          }
+        }
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Plus+Jakarta+Sans:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style is:global>
+      body {
+        background: radial-gradient(circle at top right, rgba(79, 70, 229, 0.22), transparent 45%),
+          radial-gradient(circle at 10% 20%, rgba(103, 232, 249, 0.18), transparent 35%), #0f1115;
+        color: #f4f7ff;
+        min-height: 100vh;
+      }
+
+      .glass {
+        background: rgba(20, 25, 34, 0.72);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        border: 1px solid rgba(158, 165, 181, 0.16);
+      }
+
+      .section-shell {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .nav-link {
+        color: #c7cfde;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+      }
+
+      .nav-link:hover {
+        color: #f4f7ff;
+      }
+    </style>
+  </head>
+  <body class="font-body">
+    <nav class="sticky top-0 z-50 border-b border-line/70 bg-ink/70 backdrop-blur-xl">
+      <div class="section-shell flex items-center justify-between px-6 py-5 md:px-8">
+        <a href="/" class="font-headline text-xl font-bold tracking-tight text-brandSoft">EC</a>
+        <div class="hidden items-center gap-8 md:flex">
+          <a href="/#work" class="nav-link">Work</a>
+          <a href="/#services" class="nav-link">Services</a>
+          <a href="/#about" class="nav-link">About</a>
+          <a href="/#contact" class="nav-link">Contact</a>
+        </div>
+        <div class="flex items-center gap-3">
+          {
+            user ? (
+              <>
+                <a
+                  href="/dashboard"
+                  class="rounded-full border border-brandSoft/30 px-4 py-2 text-xs font-bold uppercase tracking-widest text-brandSoft transition hover:border-brandSoft hover:text-white"
+                >
+                  Dashboard
+                </a>
+                <form method="post" action="/api/logout">
+                  <button
+                    type="submit"
+                    class="rounded-full bg-brand px-4 py-2 text-xs font-bold uppercase tracking-widest text-white transition hover:brightness-110"
+                  >
+                    Logout
+                  </button>
+                </form>
+              </>
+            ) : (
+              <>
+                <a
+                  href="/login"
+                  class="rounded-full border border-brandSoft/30 px-4 py-2 text-xs font-bold uppercase tracking-widest text-brandSoft transition hover:border-brandSoft hover:text-white"
+                >
+                  Login
+                </a>
+                <a
+                  href="/signup"
+                  class="rounded-full bg-brand px-4 py-2 text-xs font-bold uppercase tracking-widest text-white transition hover:brightness-110"
+                >
+                  Sign Up
+                </a>
+              </>
+            )
+          }
+        </div>
+      </div>
+    </nav>
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>

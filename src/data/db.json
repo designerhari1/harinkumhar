@@ -1,0 +1,14 @@
+{
+  "users": [
+    {
+      "id": "cec48d04-3cd3-4670-a63d-d3218fcff4f1",
+      "name": "Hari Narayan Kumhar",
+      "email": "harinarayan@gofynd.com",
+      "passwordHash": "2a5e9f0ac5da6f70241754dd3e6335d369c44b820f3434b3c51e7821ffe792f0e431e718076da139790cec2c70917b7d08169e45753b14a344c35ffd95c112e1",
+      "salt": "834506b4efe93129d3a55e2ad40bec72",
+      "createdAt": "2026-03-26T02:02:20.328Z"
+    }
+  ],
+  "sessions": [],
+  "leads": []
+}
