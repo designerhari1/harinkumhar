@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .tag,
+  .tag-pill {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: 0.01em;
+    text-transform: none;
+    color: #202427;
+    background: #f1f1f1;
+    border: 1px solid #c6c9cb;
+  }
+
+  .tag-muted,
+  .tag-pill-muted {
+    color: #202427;
+    background: #f1f1f1;
+    border-color: #c6c9cb;
+  }
+}

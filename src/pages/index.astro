@@ -1,188 +1,274 @@
 ---
-import SiteLayout from '../layouts/SiteLayout.astro';
-
 export const prerender = false;
-
-const sent = Astro.url.searchParams.get('sent') === '1';
-const user = Astro.locals.user;
+import '../styles/global.css';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import SiteCta from '../components/SiteCta.astro';
 ---
 
-<SiteLayout title="EC | Frontend & Webflow Developer App">
-  <section class="section-shell grid min-h-[88vh] grid-cols-1 items-center gap-12 px-6 py-16 md:px-8 lg:grid-cols-12">
-    <div class="lg:col-span-7">
-      <p class="mb-5 font-label text-xs uppercase tracking-[0.2em] text-brandSoft">Available for freelance</p>
-      <h1 class="font-headline text-5xl font-bold leading-tight tracking-tight md:text-7xl">
-        Building modern, <span class="text-brandSoft">high-performing</span> websites.
-      </h1>
-      <p class="mt-8 max-w-2xl text-lg leading-relaxed text-mist">
-        Webflow + frontend product studio experience wrapped into one app. Explore services, message me,
-        then hop into your private dashboard to track requests.
-      </p>
-      <div class="mt-10 flex flex-wrap gap-4">
-        <a href="#work" class="rounded-xl bg-brand px-7 py-4 font-headline font-bold text-white shadow-halo transition hover:scale-105">
-          View Projects
-        </a>
-        {
-          user ? (
-            <a href="/dashboard" class="rounded-xl border border-line px-7 py-4 font-headline font-bold text-white transition hover:bg-coal">Open Dashboard</a>
-          ) : (
-            <a href="/signup" class="rounded-xl border border-line px-7 py-4 font-headline font-bold text-white transition hover:bg-coal">Create Account</a>
-          )
-        }
-      </div>
-    </div>
-    <div class="relative lg:col-span-5">
-      <div class="absolute -right-16 -top-20 h-64 w-64 rounded-full bg-brand/30 blur-[100px]"></div>
-      <div class="glass rotate-2 rounded-3xl p-4 transition duration-700 hover:rotate-0">
-        <img
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuBevIafPBE7PT16YSMFGlU6hrCzHPEzLGvB_Rk4UQLTi09j94qAST4RbHkvYp6XzvnqIzG67W8jPidAdx65k9fLbta2cji8n7ABWYmoDDch1aQgwnoB3uMy3bxHcJi93jotOU4FKC3JwIaHpR7i8kJpQHkiYpRGubiUadE8fCPA5q69gJ9061tHKqVx_iAhabrGAyQy-NBKBy468MJ_2ZZSYhGLk_Ld122a7_-qqAyMmQFOUs1po17UPUjgjF_11KZuGiBUytuLbw"
-          alt="Frontend workspace"
-          class="aspect-[4/5] w-full rounded-2xl object-cover grayscale transition duration-700 hover:grayscale-0"
-          loading="lazy"
-        />
-      </div>
-    </div>
-  </section>
-
-  <section id="about" class="border-y border-line/70 bg-coal/60 py-24">
-    <div class="section-shell grid grid-cols-1 gap-16 px-6 md:px-8 lg:grid-cols-2">
-      <div>
-        <h2 class="font-headline text-4xl font-bold tracking-tight md:text-5xl">
-          Crafting interfaces with <span class="text-brandSoft">technical precision</span>.
-        </h2>
-        <p class="mt-6 text-lg leading-relaxed text-mist">
-          I help teams bridge complex functionality and high-end aesthetics. Every project is tuned for speed,
-          accessibility, and responsive integrity.
-        </p>
-      </div>
-      <div>
-        <p class="font-label text-xs uppercase tracking-[0.25em] text-mist">Expertise</p>
-        <div class="mt-6 flex flex-wrap gap-3" id="work">
-          {['Webflow', 'React.js', 'Next.js', 'Astro', 'Responsive Design', 'API Integration', 'Performance', 'UI Systems'].map((skill) => (
-            <span class="rounded-full border border-line bg-ink/80 px-4 py-2 text-xs font-bold uppercase tracking-wider text-mist">{skill}</span>
-          ))}
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="services" class="section-shell px-6 py-24 md:px-8">
-    <div class="mb-12">
-      <h2 class="font-headline text-4xl font-bold tracking-tight md:text-5xl">Focused Services</h2>
-      <p class="mt-4 max-w-2xl text-mist">Tailored digital solutions for growing businesses.</p>
-    </div>
-    <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-      {[
-        ['Webflow Development', 'Pixel-perfect implementation with structured CMS architecture.'],
-        ['Frontend Development', 'Scalable React, Next.js, and Astro builds with speed-first engineering.'],
-        ['Landing Page Design', 'High-conversion landing pages with bold editorial visual language.'],
-        ['Responsive Development', 'Cross-device consistency from mobile to large desktop displays.'],
-        ['Website Redesign', 'Legacy site upgrades with modern UX and performance optimization.'],
-        ['Product UI Polish', 'Interaction and visual refinement for product teams shipping fast.']
-      ].map(([title, copy]) => (
-        <article class="glass rounded-2xl p-8 transition duration-300 hover:-translate-y-1 hover:border-brandSoft/40">
-          <h3 class="font-headline text-xl font-bold">{title}</h3>
-          <p class="mt-4 text-sm leading-relaxed text-mist">{copy}</p>
-        </article>
-      ))}
-    </div>
-  </section>
-
-  <section class="border-y border-line/70 bg-coal/50 py-24">
-    <div class="section-shell px-6 md:px-8">
-      <h2 class="text-center font-headline text-4xl font-bold tracking-tight">Client Voice</h2>
-      <div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
-        {[
-          ['Marcus Sterling', 'Founder, Apex Creative', 'The attention to detail in the Webflow build was remarkable.'],
-          ['Lena Laurent', 'CTO, Flux Systems', 'Fast frontend delivery and polished design execution.'],
-          ['David Rossi', 'Marketing Director, Nexus', 'Load times improved dramatically after the redesign.']
-        ].map(([name, role, quote]) => (
-          <article class="glass rounded-2xl p-8">
-            <p class="text-sm italic leading-relaxed text-mist">"{quote}"</p>
-            <div class="mt-6 border-t border-line/70 pt-4">
-              <p class="font-headline text-sm font-bold">{name}</p>
-              <p class="font-label text-[10px] uppercase tracking-[0.2em] text-mist">{role}</p>
-            </div>
-          </article>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="section-shell grid grid-cols-1 gap-14 px-6 py-24 md:px-8 lg:grid-cols-2">
-    <div>
-      <h2 class="font-headline text-5xl font-bold leading-tight tracking-tight">
-        Let's Build Something Great <span class="text-brandSoft">Together</span>.
-      </h2>
-      <p class="mt-6 max-w-xl text-lg text-mist">
-        Share your project details and I will follow up with a proposal. Signed-in users will also see this saved in
-        their dashboard.
-      </p>
-      <img
-        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWXXt_Nmke0qcYbXOls1WaD8IcSkcxbZpakXlLIuXkvu1uIz_0m6brRCvZFaXctchiCkDMjFpww6TBHlbOOougCxzZrLdWQOGt4SQW7aVuK2Jx2o-P-4tOFFDDutPA32Z5DWivkYLeM9mwTynHvcgNmXmg9Jrn-otMrZJ_NcwTvXiqZa-fYTIeVOVJVtVo6VbLH0_pGZfqaqcYWxa4oK2KITzM2hWF3sHUS_cTCXsqh4Gq0CgHfgsryQMHOgYclXlyRR9TTf1Brw"
-        alt="Abstract technical system"
-        class="mt-10 h-52 w-full rounded-2xl object-cover opacity-80"
-        loading="lazy"
-      />
-    </div>
-
-    <div class="glass rounded-2xl p-8">
-      {
-        sent && (
-          <div class="mb-6 rounded-xl border border-emerald-400/40 bg-emerald-500/10 p-4 text-sm text-emerald-200">
-            Message sent. I have stored it in the database.
-          </div>
-        )
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>H | Webflow &amp; Frontend Developer</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style is:global>
+      body {
+        font-family: 'Manrope', sans-serif;
+        background-color: #f9f9f9;
+        color: #2d3435;
       }
-      <form method="post" action="/api/contact" class="space-y-5">
-        <input type="hidden" name="source" value="landing" />
-        <div>
-          <label class="mb-2 block font-label text-xs uppercase tracking-[0.2em] text-mist">Name</label>
-          <input
-            name="name"
-            type="text"
-            required
-            value={user?.name ?? ''}
-            class="w-full rounded-xl border border-line bg-ink/80 px-4 py-3 text-white placeholder:text-mist/60 focus:border-brandSoft focus:ring-brandSoft"
-            placeholder="John Doe"
-          />
-        </div>
-        <div>
-          <label class="mb-2 block font-label text-xs uppercase tracking-[0.2em] text-mist">Email</label>
-          <input
-            name="email"
-            type="email"
-            required
-            value={user?.email ?? ''}
-            class="w-full rounded-xl border border-line bg-ink/80 px-4 py-3 text-white placeholder:text-mist/60 focus:border-brandSoft focus:ring-brandSoft"
-            placeholder="john@example.com"
-          />
-        </div>
-        <div>
-          <label class="mb-2 block font-label text-xs uppercase tracking-[0.2em] text-mist">Message</label>
-          <textarea
-            name="message"
-            rows="5"
-            required
-            class="w-full rounded-xl border border-line bg-ink/80 px-4 py-3 text-white placeholder:text-mist/60 focus:border-brandSoft focus:ring-brandSoft"
-            placeholder="Tell me about your project goals..."
-          ></textarea>
-        </div>
-        <button type="submit" class="w-full rounded-xl bg-brand px-4 py-3 font-headline font-bold text-white transition hover:brightness-110">
-          Send Message
-        </button>
-      </form>
-    </div>
-  </section>
 
-  <footer class="border-t border-line/70 bg-ink/80 py-10">
-    <div class="section-shell flex flex-col items-center justify-between gap-4 px-6 md:flex-row md:px-8">
-      <p class="font-label text-xs uppercase tracking-[0.3em] text-mist">© 2026 Editorial Engineering</p>
-      <div class="flex gap-6 text-xs uppercase tracking-[0.25em] text-mist">
-        <a href="#">Twitter</a>
-        <a href="#">LinkedIn</a>
-        <a href="#">GitHub</a>
-      </div>
-    </div>
-  </footer>
-</SiteLayout>
+      .serif-italic {
+        font-family: 'Newsreader', serif;
+        font-style: italic;
+      }
+
+      .headline-lg {
+        font-size: clamp(2.5rem, 8vw, 4rem);
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+      }
+
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      }
+
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+  </head>
+  <body class="bg-background text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+    <SiteHeader active="home" />
+
+    <main class="pt-32" id="home">
+      <section class="mx-auto flex min-h-[819px] max-w-[1440px] flex-col justify-center px-8">
+        <div class="mb-8 flex items-center gap-4">
+          <span class="relative inline-flex h-3 w-3">
+            <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400/50"></span>
+            <span class="relative inline-flex h-3 w-3 rounded-full bg-emerald-500 ring-2 ring-emerald-100"></span>
+          </span>
+          <span class="font-label text-[11px] uppercase tracking-[0.2em] text-secondary">Available for new projects</span>
+        </div>
+        <div class="max-w-5xl">
+          <h1 class="headline-lg mb-12 font-headline">
+            I build <span class="serif-italic">high-impact</span> websites with Webflow, React, and Next.js.
+          </h1>
+          <div class="flex flex-col gap-6 sm:flex-row">
+            <button class="flex items-center justify-center gap-2 rounded-full bg-primary px-10 py-5 font-label text-sm uppercase tracking-widest text-on-primary transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-dim">
+              Start a Project
+              <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </button>
+            <button class="flex items-center justify-center rounded-full border border-outline-variant/20 px-10 py-5 font-label text-sm uppercase tracking-widest transition-all duration-300 hover:bg-surface-container-low">
+              View Work
+            </button>
+          </div>
+        </div>
+        <div class="mt-24 grid grid-cols-1 gap-12 border-t border-outline-variant/10 pt-12 md:grid-cols-3">
+          <div>
+            <p class="mb-4 font-label text-[10px] uppercase tracking-widest text-outline">Focused On</p>
+            <p class="font-body text-on-surface">Digital products that balance aesthetics with conversion-focused strategy.</p>
+          </div>
+          <div>
+            <p class="mb-4 font-label text-[10px] uppercase tracking-widest text-outline">Core Stack</p>
+            <p class="font-body text-on-surface">React, Next.js, Webflow, Tailwind CSS, Framer Motion.</p>
+          </div>
+          <div>
+            <p class="mb-4 font-label text-[10px] uppercase tracking-widest text-outline">Based In</p>
+            <p class="font-body text-on-surface">Remote, globally. Available for synchronized collaboration.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-surface-container-low py-32" id="work">
+        <div class="mx-auto max-w-[1440px] px-8">
+          <div class="mb-20 flex items-end justify-between">
+            <div class="max-w-xl">
+              <p class="mb-4 font-label text-[11px] uppercase tracking-[0.2em] text-primary">Selected Works</p>
+              <h2 class="font-headline text-4xl sm:text-5xl">Curation of <span class="serif-italic">Digital Experiences</span></h2>
+            </div>
+            <a class="hidden border-b border-primary/20 pb-1 font-label text-xs uppercase tracking-widest transition-all hover:border-primary md:block" href="#">Explore Portfolio</a>
+          </div>
+
+          <div class="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-20">
+            <div class="group cursor-pointer lg:col-span-7">
+              <div class="relative aspect-[16/10] overflow-hidden rounded-xl bg-surface-container-highest">
+                <img
+                  class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  alt="Modern minimalist analytics interface design with clean typography and soft shadows on a high-resolution monitor in a bright studio"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuArkBk4VZ5t3g3fFo4pXx6bQyWGkz6W0kv8MWX6mVst5xthm5q9HkHPCGd__uWvF9u6T_YAvIYjSS7xtGIuD0mgWzqY4-9neJPirh4EHH57qGrF7w2iufQSBBhlEdqkpJLL4T911esJpncQpwU9BdmN_YzKiyAx1pZuRKv4mTgr4utiSaO3d6b8WyHijk5QoFbkI9zvBJFackSDJVNM4_bHi-Vdx4vDlkSlwKb9UwhYpBth1-suG8NSx7gLyEzYu-axviqx1t4GXA"
+                  loading="lazy"
+                />
+              </div>
+              <div class="mt-8 flex items-start justify-between">
+                <div>
+                  <h3 class="mb-2 font-headline text-2xl">Aether Financial</h3>
+                  <div class="flex gap-2">
+                    <span class="tag">Fintech</span>
+                    <span class="tag">Webflow</span>
+                  </div>
+                </div>
+                <span class="material-symbols-outlined text-outline-variant transition-colors group-hover:text-primary">north_east</span>
+              </div>
+            </div>
+
+            <div class="group cursor-pointer lg:col-span-5">
+              <div class="relative aspect-[4/5] overflow-hidden rounded-xl bg-surface-container-highest">
+                <img
+                  class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  alt="Interior of a minimalist architect studio with concrete walls, large windows, and designer furniture in neutral tones"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkLWDaewsf-5YmaCdgHT6cOtXQxnKm4lruzXpYBN-o60GPptpIKExr_nJE4_cKm18WCi7THd5M0G_sj-K9Zyz5acv_SaOady_KIF7-LuCy9S1bn1lp-yBldVeJAXJSFB-Wy3BrbED4slz_70asso80F_vJ9xLtlOc39mj-t9KmJ7HJODRcd2kdmxlBQqXfOqlOvi3YLQ4wJ-eudILhnB4HvUPneBnAHfsXWynzjA0_OWQ-OrGzLdpzmc0KRkUKltMaQ3CHZS-Usw"
+                  loading="lazy"
+                />
+              </div>
+              <div class="mt-8">
+                <h3 class="mb-2 font-headline text-2xl">Studio Praxis</h3>
+                <div class="flex gap-2">
+                  <span class="tag">Architecture</span>
+                  <span class="tag">Next.js</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="group cursor-pointer lg:col-span-5">
+              <div class="relative aspect-[4/5] overflow-hidden rounded-xl bg-surface-container-highest">
+                <img
+                  class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  alt="Close-up of a premium designer watch on a white silk background with soft diffused lighting and elegant shadows"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9-lzvS-kSG92KNaAXBKtjsJN_IC_efV0JVf89aQyb5xe3QvtUifY2EALybUyhFxip2BJMe5tqnPtOz_zNJ2QRn4P4gfETQNsPIwtNye9VFNaE-aVjTCrBqtSSMpxZbSg7Q-vO1za2rDXlnfDxEuxtl6dtOCQcYWYsz0GUNxriGy0CT24haJYmd3bgEUonTOTctz3IlXAxiluSeSCfGw4YnJq0ECpfmpxzpiUsOlnRLh1N--qtXJ7UopIfV_K-tFTC-g5awTtBaw"
+                  loading="lazy"
+                />
+              </div>
+              <div class="mt-8">
+                <h3 class="mb-2 font-headline text-2xl">Chronos Boutique</h3>
+                <div class="flex gap-2">
+                  <span class="tag">E-commerce</span>
+                  <span class="tag">Headless CMS</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="group cursor-pointer lg:col-span-7">
+              <div class="relative aspect-[16/10] overflow-hidden rounded-xl bg-surface-container-highest">
+                <img
+                  class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  alt="Overhead view of creative professionals working on wireframes and color palettes at a large oak table in a modern office"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBzHLwcsHVFBan1MAOenogVkBOx7RLPHZVQdstMalUizrTHwaQvmTsae7AMRdLHuTLo3dhEv0K19567SZrTpy2bdXvz4Q2tPfQY2dzQ14eMLT2sX-rvza0S6GVUeWJCBNrd0885aO2rssS1tD-8rIFlaO7EEX0Cdz0NFmkYQxA8IsttTWo0b_iNGoGKYHGlgEwKI_u4SEpkXCws5fbKwh1C8D3YZ_m9eKQedhvJGh7Grev6_RzyFDUbG8far_s9IHWlIIE4gRJyw"
+                  loading="lazy"
+                />
+              </div>
+              <div class="mt-8 flex items-start justify-between">
+                <div>
+                  <h3 class="mb-2 font-headline text-2xl">Lumina Agency</h3>
+                  <div class="flex gap-2">
+                    <span class="tag">Creative Agency</span>
+                    <span class="tag">Framer</span>
+                  </div>
+                </div>
+                <span class="material-symbols-outlined text-outline-variant transition-colors group-hover:text-primary">north_east</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-[1440px] px-8 py-40" id="services">
+        <div class="grid grid-cols-1 items-start gap-24 lg:grid-cols-2">
+          <div>
+            <p class="mb-6 font-label text-[11px] uppercase tracking-[0.2em] text-primary">Expertise</p>
+            <h2 class="mb-12 font-headline text-5xl">I specialize in bridging the gap between <span class="serif-italic">design and code</span>.</h2>
+            <p class="mb-12 max-w-lg leading-relaxed text-on-surface-variant">
+              With over 5 years of experience, I help startups and established brands transform their vision into
+              high-performing digital realities. Every pixel is intentional, every line of code is optimized.
+            </p>
+            <div class="space-y-12">
+              <div class="group border-b border-outline-variant/10 pb-8 transition-colors duration-500 hover:border-primary">
+                <span class="mb-2 block font-label text-xs text-outline">01</span>
+                <h4 class="mb-4 font-headline text-2xl">Webflow Development</h4>
+                <p class="text-sm text-on-surface-variant">
+                  Custom, scalable, and fully responsive Webflow builds with clean structure and high-end interactions.
+                </p>
+              </div>
+              <div class="group border-b border-outline-variant/10 pb-8 transition-colors duration-500 hover:border-primary">
+                <span class="mb-2 block font-label text-xs text-outline">02</span>
+                <h4 class="mb-4 font-headline text-2xl">React &amp; Next.js Apps</h4>
+                <p class="text-sm text-on-surface-variant">
+                  Building dynamic, fast-loading web applications focused on user experience and seamless performance.
+                </p>
+              </div>
+              <div class="group border-b border-outline-variant/10 pb-8 transition-colors duration-500 hover:border-primary">
+                <span class="mb-2 block font-label text-xs text-outline">03</span>
+                <h4 class="mb-4 font-headline text-2xl">Design Systems</h4>
+                <p class="text-sm text-on-surface-variant">
+                  Creating cohesive visual languages that ensure brand consistency across all digital touchpoints.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative lg:pt-32">
+            <div class="rounded-xl bg-surface-container-low p-10 lg:p-16">
+              <div class="mb-12">
+                <img
+                  class="w-full rounded-lg shadow-xl"
+                  alt="Close up of high quality laptop screen showing clean lines of code in a dark mode editor with subtle syntax highlighting"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwjoCJBDS3ZnER6NZzJRyOsK1i4LOAprNtSet6viJ6ud0Nn1Yi28R_ikc0cJgkzfOB3oAmeXIGxu29pC7c1pOircAG4G6lne_7iYIFKrecidGuCC8f4-Vb4K6-zbqXJG8Rs7v5EWTujHY5-zimsyB_sOg7Tk_J595bgT1JYxqETLT8N5CziInJWACBX_IH0NE-_lIKPuXoT4A1NirLuncJMFxjh6HKRam8KqEvld2VBpGgnK0sPWhJHuGKM68ppChxkls-DDpUFA"
+                  loading="lazy"
+                />
+              </div>
+              <div class="space-y-6">
+                <p class="font-headline text-xl italic">
+                  &quot;H&apos;s ability to take complex design requirements and turn them into flawlessly functional websites is unmatched. A true professional.&quot;
+                </p>
+                <div class="flex items-center gap-4">
+                  <div class="h-10 w-10 rounded-full bg-primary-container"></div>
+                  <div>
+                    <p class="font-label text-xs font-bold uppercase tracking-widest">Sarah Jenkins</p>
+                    <p class="font-label text-[10px] uppercase tracking-widest text-outline">CEO at Lumina</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="absolute -right-10 -top-10 -z-10 h-40 w-40 rounded-full bg-tertiary-container opacity-30 blur-3xl mix-blend-multiply"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-white py-32" id="about">
+        <div class="mx-auto grid max-w-[1440px] grid-cols-1 gap-12 px-8 lg:grid-cols-12">
+          <div class="lg:col-span-4">
+            <p class="mb-6 font-label text-[11px] uppercase tracking-[0.2em] text-primary">About H</p>
+          </div>
+          <div class="lg:col-span-8">
+            <h3 class="mb-8 font-headline text-3xl leading-tight sm:text-4xl">
+              I believe that great software is like fine architecture-it should be <span class="serif-italic">stable, useful, and beautiful</span>.
+            </h3>
+            <div class="mt-16 grid grid-cols-1 gap-12 font-body leading-relaxed text-on-surface-variant md:grid-cols-2">
+              <p>
+                My journey started with a fascination for how design influences human behavior. Today, I use that curiosity
+                to build digital interfaces that don&apos;t just look pretty, but solve real business challenges.
+              </p>
+              <p>
+                When I&apos;m not coding, I&apos;m likely exploring minimal architecture, studying typography, or helping fellow
+                developers bridge the gap between Figma and the browser.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <SiteCta id="contact" />
+    </main>
+
+    <SiteFooter />
+  </body>
+</html>
