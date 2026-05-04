@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">JioCommerce.io project graphic</title>
+  <desc id="desc">Professional enterprise commerce platform graphic for JioCommerce.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f3f7fc"/>
+      <stop offset="1" stop-color="#e6edf7"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#365c86"/>
+      <stop offset="1" stop-color="#29496b"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="18" flood-color="#1f334a" flood-opacity="0.16"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <g filter="url(#shadow)">
+    <rect x="150" y="120" width="1300" height="760" rx="34" fill="#ffffff" stroke="#d2dcea"/>
+  </g>
+
+  <rect x="206" y="176" width="1188" height="88" rx="16" fill="#f2f6fc" stroke="#dae2ee"/>
+  <text x="254" y="236" font-family="Newsreader, Georgia, serif" font-size="70" fill="#202427">jiocommerce.io</text>
+
+  <rect x="206" y="320" width="360" height="494" rx="24" fill="url(#panel)"/>
+  <rect x="620" y="320" width="360" height="494" rx="24" fill="url(#panel)" opacity="0.9"/>
+  <rect x="1034" y="320" width="360" height="494" rx="24" fill="url(#panel)" opacity="0.78"/>
+
+  <g fill="#eef4fd" font-family="Manrope, Arial, sans-serif">
+    <text x="246" y="392" font-size="30" font-weight="600">Orders</text>
+    <text x="660" y="392" font-size="30" font-weight="600">Catalog</text>
+    <text x="1074" y="392" font-size="30" font-weight="600">Insights</text>
+
+    <rect x="246" y="428" width="280" height="18" rx="9" fill="#9fb4cb" opacity="0.7"/>
+    <rect x="246" y="462" width="230" height="18" rx="9" fill="#9fb4cb" opacity="0.7"/>
+    <rect x="660" y="428" width="280" height="18" rx="9" fill="#9fb4cb" opacity="0.7"/>
+    <rect x="660" y="462" width="230" height="18" rx="9" fill="#9fb4cb" opacity="0.7"/>
+    <rect x="1074" y="428" width="280" height="18" rx="9" fill="#9fb4cb" opacity="0.7"/>
+    <rect x="1074" y="462" width="230" height="18" rx="9" fill="#9fb4cb" opacity="0.7"/>
+  </g>
+
+  <text x="206" y="932" font-family="Manrope, Arial, sans-serif" font-size="34" fill="#445d7c">Enterprise commerce system for omnichannel operations and scale</text>
+</svg>

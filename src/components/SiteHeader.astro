@@ -1,43 +1,37 @@
 ---
-interface Props {
-  active?: 'home' | 'about' | 'work';
-}
-
-const { active = 'home' } = Astro.props;
-
 const links = [
-  { key: 'home', href: '/', label: 'Home' },
-  { key: 'about', href: '/about', label: 'About' },
-  { key: 'work', href: '/work', label: 'Work' }
+  { href: '#home', label: 'Home' },
+  { href: '#about', label: 'About' },
+  { href: '#work', label: 'Work' },
+  { href: '#services', label: 'Services' },
+  { href: '#contact', label: 'Contact' }
 ];
-
-const linkBase = 'font-headline text-lg italic tracking-tight transition-colors duration-300';
 ---
 
 <header class="fixed top-0 z-50 w-full bg-[#f9f9f9]/80 backdrop-blur-md">
   <nav class="mx-auto flex max-w-[1440px] items-center justify-between px-8 py-6">
-    <a class="font-headline text-base font-bold text-[#2d3435] md:text-xl" href="/">H</a>
+    <a class="font-headline text-base font-bold text-[#2d3435] md:text-xl" href="#home">H</a>
     <div class="hidden items-center gap-10 md:flex">
       {
         links.map((link) => (
-          <a
-            class={`${linkBase} ${
-              active === link.key
-                ? 'text-[#5f5e5e] font-medium border-b border-[#5f5e5e]'
-                : 'text-[#5f5e5e]/60 hover:text-[#2d3435]'
-            }`}
-            href={link.href}
-          >
+          <a class="font-headline text-lg italic tracking-tight text-[#5f5e5e]/70 transition-colors duration-300 hover:text-[#2d3435]" href={link.href}>
             {link.label}
           </a>
         ))
       }
     </div>
     <a
-      class="rounded-full bg-[#5f5e5e] px-6 py-2 font-label text-sm uppercase tracking-widest text-[#faf7f6] transition-all duration-300 hover:bg-[#535252] active:scale-95"
-      href="mailto:hello@harinarayan.com"
+      class="inline-flex rounded-full bg-[#5f5e5e] px-6 py-2 font-label text-sm uppercase tracking-widest text-[#faf7f6] transition-all duration-300 hover:bg-[#535252] active:scale-95"
+      href="mailto:hello@harinkumhar.com"
     >
       Let&apos;s Talk
     </a>
   </nav>
 </header>
+
+<nav class="fixed bottom-4 left-1/2 z-50 flex w-[calc(100%-2rem)] max-w-sm -translate-x-1/2 items-center justify-between rounded-full border border-[#adb3b4]/20 bg-[#f9f9f9]/95 px-3 py-2 shadow-[0_8px_20px_rgba(0,0,0,0.08)] backdrop-blur-md md:hidden">
+  <a class="rounded-full px-3 py-2 font-label text-[10px] uppercase tracking-[0.16em] text-[#5f5e5e] hover:bg-[#efefef]" href="#home">Home</a>
+  <a class="rounded-full px-3 py-2 font-label text-[10px] uppercase tracking-[0.16em] text-[#5f5e5e] hover:bg-[#efefef]" href="#work">Work</a>
+  <a class="rounded-full px-3 py-2 font-label text-[10px] uppercase tracking-[0.16em] text-[#5f5e5e] hover:bg-[#efefef]" href="#about">About</a>
+  <a class="rounded-full px-3 py-2 font-label text-[10px] uppercase tracking-[0.16em] text-[#5f5e5e] hover:bg-[#efefef]" href="#contact">Contact</a>
+</nav>

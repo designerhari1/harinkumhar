@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1500" role="img" aria-labelledby="title desc">
+  <title id="title">Kaily.ai project graphic</title>
+  <desc id="desc">Professional product card style graphic for Kaily.ai conversational AI automation.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f5f8fc"/>
+      <stop offset="1" stop-color="#e9eef6"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8ab6ff"/>
+      <stop offset="1" stop-color="#bdd9ff"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="18" flood-color="#2b3748" flood-opacity="0.16"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="1500" fill="url(#bg)"/>
+  <g filter="url(#shadow)">
+    <rect x="90" y="90" width="1020" height="1320" rx="34" fill="#ffffff" stroke="#dde5f0"/>
+  </g>
+
+  <rect x="150" y="152" width="900" height="72" rx="16" fill="#f4f8ff" stroke="#dbe7fb"/>
+  <circle cx="196" cy="188" r="10" fill="#7ea9ff"/>
+  <circle cx="228" cy="188" r="10" fill="#b8d2ff"/>
+  <circle cx="260" cy="188" r="10" fill="#d5e4ff"/>
+
+  <text x="150" y="360" font-family="Newsreader, Georgia, serif" font-size="132" fill="#202427">kaily.ai</text>
+  <text x="154" y="430" font-family="Manrope, Arial, sans-serif" font-size="34" fill="#5a6675">Conversational workflows built for scale</text>
+
+  <rect x="150" y="490" width="320" height="74" rx="14" fill="#202427"/>
+  <text x="212" y="538" font-family="Manrope, Arial, sans-serif" font-size="29" font-weight="600" letter-spacing="1.8" fill="#f9f9f9">TRY LIVE DEMO</text>
+
+  <rect x="150" y="620" width="900" height="340" rx="24" fill="#f7faff" stroke="#dce7fa"/>
+  <rect x="190" y="664" width="820" height="50" rx="12" fill="url(#glow)" opacity="0.22"/>
+  <text x="214" y="698" font-family="Manrope, Arial, sans-serif" font-size="24" font-weight="600" fill="#39506f">AI assistant pipeline</text>
+
+  <rect x="190" y="750" width="232" height="136" rx="16" fill="#ffffff" stroke="#d9e4f7"/>
+  <rect x="450" y="750" width="232" height="136" rx="16" fill="#ffffff" stroke="#d9e4f7"/>
+  <rect x="710" y="750" width="300" height="136" rx="16" fill="#ffffff" stroke="#d9e4f7"/>
+
+  <text x="214" y="816" font-family="Manrope, Arial, sans-serif" font-size="24" fill="#48576b">Intent</text>
+  <text x="474" y="816" font-family="Manrope, Arial, sans-serif" font-size="24" fill="#48576b">Knowledge</text>
+  <text x="734" y="816" font-family="Manrope, Arial, sans-serif" font-size="24" fill="#48576b">Response</text>
+
+  <rect x="150" y="1008" width="900" height="340" rx="24" fill="#f9fbff" stroke="#dde7f5"/>
+  <text x="190" y="1088" font-family="Manrope, Arial, sans-serif" font-size="30" font-weight="600" fill="#293847">Automation metrics</text>
+  <path d="M190 1210 C300 1170, 380 1240, 480 1198 C560 1164, 648 1218, 742 1184 C820 1156, 904 1206, 1010 1160" fill="none" stroke="#7ea9ff" stroke-width="8" stroke-linecap="round"/>
+</svg>

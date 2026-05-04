@@ -47,9 +47,9 @@ import SiteCta from '../components/SiteCta.astro';
     </style>
   </head>
   <body class="bg-background text-on-surface selection:bg-primary-container selection:text-on-primary-container">
-    <SiteHeader active="home" />
+    <SiteHeader />
 
-    <main class="pt-32" id="home">
+    <main class="pb-28 pt-32 md:pb-0" id="home">
       <section class="mx-auto flex min-h-[819px] max-w-[1440px] flex-col justify-center px-8">
         <div class="mb-8 flex items-center gap-4">
           <span class="relative inline-flex h-3 w-3">
@@ -60,16 +60,22 @@ import SiteCta from '../components/SiteCta.astro';
         </div>
         <div class="max-w-5xl">
           <h1 class="headline-lg mb-12 font-headline">
-            I build <span class="serif-italic">high-impact</span> websites with Webflow, React, and Next.js.
+            I build <span class="serif-italic">high-impact</span> digital experiences for modern brands.
           </h1>
           <div class="flex flex-col gap-6 sm:flex-row">
-            <button class="flex items-center justify-center gap-2 rounded-full bg-primary px-10 py-5 font-label text-sm uppercase tracking-widest text-on-primary transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-dim">
+            <a
+              class="flex items-center justify-center gap-2 rounded-full bg-primary px-10 py-5 font-label text-sm uppercase tracking-widest text-on-primary transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-dim"
+              href="#contact"
+            >
               Start a Project
               <span class="material-symbols-outlined text-sm">arrow_forward</span>
-            </button>
-            <button class="flex items-center justify-center rounded-full border border-outline-variant/20 px-10 py-5 font-label text-sm uppercase tracking-widest transition-all duration-300 hover:bg-surface-container-low">
+            </a>
+            <a
+              class="flex items-center justify-center rounded-full border border-outline-variant/20 px-10 py-5 font-label text-sm uppercase tracking-widest transition-all duration-300 hover:bg-surface-container-low"
+              href="#work"
+            >
               View Work
-            </button>
+            </a>
           </div>
         </div>
         <div class="mt-24 grid grid-cols-1 gap-12 border-t border-outline-variant/10 pt-12 md:grid-cols-3">
@@ -99,145 +105,119 @@ import SiteCta from '../components/SiteCta.astro';
           </div>
 
           <div class="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-20">
-            <div class="group cursor-pointer lg:col-span-7">
+            <a class="group block cursor-pointer lg:col-span-7" href="https://boltic.io/" rel="noreferrer" target="_blank">
               <div class="relative aspect-[16/10] overflow-hidden rounded-xl bg-surface-container-highest">
                 <img
-                  class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  alt="Modern minimalist analytics interface design with clean typography and soft shadows on a high-resolution monitor in a bright studio"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuArkBk4VZ5t3g3fFo4pXx6bQyWGkz6W0kv8MWX6mVst5xthm5q9HkHPCGd__uWvF9u6T_YAvIYjSS7xtGIuD0mgWzqY4-9neJPirh4EHH57qGrF7w2iufQSBBhlEdqkpJLL4T911esJpncQpwU9BdmN_YzKiyAx1pZuRKv4mTgr4utiSaO3d6b8WyHijk5QoFbkI9zvBJFackSDJVNM4_bHi-Vdx4vDlkSlwKb9UwhYpBth1-suG8NSx7gLyEzYu-axviqx1t4GXA"
+                  class="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                  alt="Fynd Boltic AI workflow automation landing page preview with product headline and CTA"
+                  src="/projects/boltic.jpg"
                   loading="lazy"
                 />
               </div>
               <div class="mt-8 flex items-start justify-between">
                 <div>
-                  <h3 class="mb-2 font-headline text-2xl">Aether Financial</h3>
+                  <h3 class="mb-2 font-headline text-2xl">Fynd Boltic</h3>
                   <div class="flex gap-2">
-                    <span class="tag">Fintech</span>
-                    <span class="tag">Webflow</span>
+                    <span class="tag">Workflow Automation</span>
+                    <span class="tag">AI Product</span>
                   </div>
                 </div>
                 <span class="material-symbols-outlined text-outline-variant transition-colors group-hover:text-primary">north_east</span>
               </div>
-            </div>
+            </a>
 
-            <div class="group cursor-pointer lg:col-span-5">
+            <a class="group block cursor-pointer lg:col-span-5" href="https://www.kaily.ai/" rel="noreferrer" target="_blank">
               <div class="relative aspect-[4/5] overflow-hidden rounded-xl bg-surface-container-highest">
                 <img
                   class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  alt="Interior of a minimalist architect studio with concrete walls, large windows, and designer furniture in neutral tones"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkLWDaewsf-5YmaCdgHT6cOtXQxnKm4lruzXpYBN-o60GPptpIKExr_nJE4_cKm18WCi7THd5M0G_sj-K9Zyz5acv_SaOady_KIF7-LuCy9S1bn1lp-yBldVeJAXJSFB-Wy3BrbED4slz_70asso80F_vJ9xLtlOc39mj-t9KmJ7HJODRcd2kdmxlBQqXfOqlOvi3YLQ4wJ-eudILhnB4HvUPneBnAHfsXWynzjA0_OWQ-OrGzLdpzmc0KRkUKltMaQ3CHZS-Usw"
+                  alt="Kaily AI website preview showcasing conversational AI workflow interfaces"
+                  src="/projects/kaily-mobile-clean.png"
                   loading="lazy"
                 />
               </div>
               <div class="mt-8">
-                <h3 class="mb-2 font-headline text-2xl">Studio Praxis</h3>
+                <h3 class="mb-2 font-headline text-2xl">Fynd Kaily</h3>
                 <div class="flex gap-2">
-                  <span class="tag">Architecture</span>
-                  <span class="tag">Next.js</span>
+                  <span class="tag">Conversational AI</span>
+                  <span class="tag">Automation</span>
                 </div>
               </div>
-            </div>
+            </a>
 
-            <div class="group cursor-pointer lg:col-span-5">
+            <a class="group block cursor-pointer lg:col-span-5" href="https://www.pixelbin.io/" rel="noreferrer" target="_blank">
               <div class="relative aspect-[4/5] overflow-hidden rounded-xl bg-surface-container-highest">
                 <img
                   class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  alt="Close-up of a premium designer watch on a white silk background with soft diffused lighting and elegant shadows"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9-lzvS-kSG92KNaAXBKtjsJN_IC_efV0JVf89aQyb5xe3QvtUifY2EALybUyhFxip2BJMe5tqnPtOz_zNJ2QRn4P4gfETQNsPIwtNye9VFNaE-aVjTCrBqtSSMpxZbSg7Q-vO1za2rDXlnfDxEuxtl6dtOCQcYWYsz0GUNxriGy0CT24haJYmd3bgEUonTOTctz3IlXAxiluSeSCfGw4YnJq0ECpfmpxzpiUsOlnRLh1N--qtXJ7UopIfV_K-tFTC-g5awTtBaw"
+                  alt="Pixelbin media optimization dashboard preview with image transformation tooling"
+                  src="/projects/pixelbin-mobile.png"
                   loading="lazy"
                 />
               </div>
               <div class="mt-8">
-                <h3 class="mb-2 font-headline text-2xl">Chronos Boutique</h3>
+                <h3 class="mb-2 font-headline text-2xl">Fynd Pixelbin</h3>
                 <div class="flex gap-2">
-                  <span class="tag">E-commerce</span>
-                  <span class="tag">Headless CMS</span>
+                  <span class="tag">Media API</span>
+                  <span class="tag">Developer Tools</span>
                 </div>
               </div>
-            </div>
+            </a>
 
-            <div class="group cursor-pointer lg:col-span-7">
+            <a class="group block cursor-pointer lg:col-span-7" href="https://jiocommerce.io/" rel="noreferrer" target="_blank">
               <div class="relative aspect-[16/10] overflow-hidden rounded-xl bg-surface-container-highest">
                 <img
                   class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  alt="Overhead view of creative professionals working on wireframes and color palettes at a large oak table in a modern office"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBzHLwcsHVFBan1MAOenogVkBOx7RLPHZVQdstMalUizrTHwaQvmTsae7AMRdLHuTLo3dhEv0K19567SZrTpy2bdXvz4Q2tPfQY2dzQ14eMLT2sX-rvza0S6GVUeWJCBNrd0885aO2rssS1tD-8rIFlaO7EEX0Cdz0NFmkYQxA8IsttTWo0b_iNGoGKYHGlgEwKI_u4SEpkXCws5fbKwh1C8D3YZ_m9eKQedhvJGh7Grev6_RzyFDUbG8far_s9IHWlIIE4gRJyw"
+                  alt="JioCommerce platform interface preview for digital commerce operations"
+                  src="/projects/jiocommerce.jpg"
                   loading="lazy"
                 />
               </div>
               <div class="mt-8 flex items-start justify-between">
                 <div>
-                  <h3 class="mb-2 font-headline text-2xl">Lumina Agency</h3>
+                  <h3 class="mb-2 font-headline text-2xl">Jio Commerce</h3>
                   <div class="flex gap-2">
-                    <span class="tag">Creative Agency</span>
-                    <span class="tag">Framer</span>
+                    <span class="tag">Commerce Platform</span>
+                    <span class="tag">Enterprise</span>
                   </div>
                 </div>
                 <span class="material-symbols-outlined text-outline-variant transition-colors group-hover:text-primary">north_east</span>
               </div>
-            </div>
+            </a>
           </div>
         </div>
       </section>
 
       <section class="mx-auto max-w-[1440px] px-8 py-40" id="services">
-        <div class="grid grid-cols-1 items-start gap-24 lg:grid-cols-2">
-          <div>
+        <div>
+          <div class="mb-20 max-w-5xl">
             <p class="mb-6 font-label text-[11px] uppercase tracking-[0.2em] text-primary">Expertise</p>
             <h2 class="mb-12 font-headline text-5xl">I specialize in bridging the gap between <span class="serif-italic">design and code</span>.</h2>
-            <p class="mb-12 max-w-lg leading-relaxed text-on-surface-variant">
+            <p class="leading-relaxed text-on-surface-variant">
               With over 5 years of experience, I help startups and established brands transform their vision into
               high-performing digital realities. Every pixel is intentional, every line of code is optimized.
             </p>
-            <div class="space-y-12">
-              <div class="group border-b border-outline-variant/10 pb-8 transition-colors duration-500 hover:border-primary">
-                <span class="mb-2 block font-label text-xs text-outline">01</span>
-                <h4 class="mb-4 font-headline text-2xl">Webflow Development</h4>
-                <p class="text-sm text-on-surface-variant">
-                  Custom, scalable, and fully responsive Webflow builds with clean structure and high-end interactions.
-                </p>
-              </div>
-              <div class="group border-b border-outline-variant/10 pb-8 transition-colors duration-500 hover:border-primary">
-                <span class="mb-2 block font-label text-xs text-outline">02</span>
-                <h4 class="mb-4 font-headline text-2xl">React &amp; Next.js Apps</h4>
-                <p class="text-sm text-on-surface-variant">
-                  Building dynamic, fast-loading web applications focused on user experience and seamless performance.
-                </p>
-              </div>
-              <div class="group border-b border-outline-variant/10 pb-8 transition-colors duration-500 hover:border-primary">
-                <span class="mb-2 block font-label text-xs text-outline">03</span>
-                <h4 class="mb-4 font-headline text-2xl">Design Systems</h4>
-                <p class="text-sm text-on-surface-variant">
-                  Creating cohesive visual languages that ensure brand consistency across all digital touchpoints.
-                </p>
-              </div>
-            </div>
           </div>
-
-          <div class="relative lg:pt-32">
-            <div class="rounded-xl bg-surface-container-low p-10 lg:p-16">
-              <div class="mb-12">
-                <img
-                  class="w-full rounded-lg shadow-xl"
-                  alt="Close up of high quality laptop screen showing clean lines of code in a dark mode editor with subtle syntax highlighting"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwjoCJBDS3ZnER6NZzJRyOsK1i4LOAprNtSet6viJ6ud0Nn1Yi28R_ikc0cJgkzfOB3oAmeXIGxu29pC7c1pOircAG4G6lne_7iYIFKrecidGuCC8f4-Vb4K6-zbqXJG8Rs7v5EWTujHY5-zimsyB_sOg7Tk_J595bgT1JYxqETLT8N5CziInJWACBX_IH0NE-_lIKPuXoT4A1NirLuncJMFxjh6HKRam8KqEvld2VBpGgnK0sPWhJHuGKM68ppChxkls-DDpUFA"
-                  loading="lazy"
-                />
-              </div>
-              <div class="space-y-6">
-                <p class="font-headline text-xl italic">
-                  &quot;H&apos;s ability to take complex design requirements and turn them into flawlessly functional websites is unmatched. A true professional.&quot;
-                </p>
-                <div class="flex items-center gap-4">
-                  <div class="h-10 w-10 rounded-full bg-primary-container"></div>
-                  <div>
-                    <p class="font-label text-xs font-bold uppercase tracking-widest">Sarah Jenkins</p>
-                    <p class="font-label text-[10px] uppercase tracking-widest text-outline">CEO at Lumina</p>
-                  </div>
-                </div>
-              </div>
+          <div class="space-y-20">
+            <div class="group border-b border-outline-variant/10 pb-12 transition-colors duration-500 hover:border-primary">
+              <span class="mb-2 block font-label text-xs text-outline">01</span>
+              <h4 class="mb-4 font-headline text-2xl">Webflow Development</h4>
+              <p class="text-sm text-on-surface-variant">
+                Custom, scalable, and fully responsive Webflow builds with clean structure and high-end interactions.
+              </p>
             </div>
-            <div class="absolute -right-10 -top-10 -z-10 h-40 w-40 rounded-full bg-tertiary-container opacity-30 blur-3xl mix-blend-multiply"></div>
+            <div class="group border-b border-outline-variant/10 pb-12 transition-colors duration-500 hover:border-primary">
+              <span class="mb-2 block font-label text-xs text-outline">02</span>
+              <h4 class="mb-4 font-headline text-2xl">React &amp; Next.js Apps</h4>
+              <p class="text-sm text-on-surface-variant">
+                Building dynamic, fast-loading web applications focused on user experience and seamless performance.
+              </p>
+            </div>
+            <div class="group border-b border-outline-variant/10 pb-12 transition-colors duration-500 hover:border-primary">
+              <span class="mb-2 block font-label text-xs text-outline">03</span>
+              <h4 class="mb-4 font-headline text-2xl">Design Systems</h4>
+              <p class="text-sm text-on-surface-variant">
+                Creating cohesive visual languages that ensure brand consistency across all digital touchpoints.
+              </p>
+            </div>
           </div>
         </div>
       </section>
