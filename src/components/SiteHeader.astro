@@ -29,9 +29,61 @@ const links = [
   </nav>
 </header>
 
-<nav class="fixed bottom-4 left-1/2 z-50 flex w-[calc(100%-2rem)] max-w-sm -translate-x-1/2 items-center justify-between rounded-full border border-[#adb3b4]/20 bg-[#f9f9f9]/95 px-3 py-2 shadow-[0_8px_20px_rgba(0,0,0,0.08)] backdrop-blur-md md:hidden">
-  <a class="rounded-full px-3 py-2 font-label text-[10px] uppercase tracking-[0.16em] text-[#5f5e5e] hover:bg-[#efefef]" href="#home">Home</a>
-  <a class="rounded-full px-3 py-2 font-label text-[10px] uppercase tracking-[0.16em] text-[#5f5e5e] hover:bg-[#efefef]" href="#work">Work</a>
-  <a class="rounded-full px-3 py-2 font-label text-[10px] uppercase tracking-[0.16em] text-[#5f5e5e] hover:bg-[#efefef]" href="#about">About</a>
-  <a class="rounded-full px-3 py-2 font-label text-[10px] uppercase tracking-[0.16em] text-[#5f5e5e] hover:bg-[#efefef]" href="#contact">Contact</a>
+<nav class="fixed bottom-4 left-1/2 z-50 flex w-[calc(100%-2rem)] max-w-sm -translate-x-1/2 items-center justify-between rounded-full border border-[#adb3b4]/20 bg-[#f9f9f9]/95 px-3 py-2 shadow-[0_8px_20px_rgba(0,0,0,0.08)] backdrop-blur-md md:hidden" id="mobile-bottom-nav">
+  <a class="mobile-bottom-link rounded-full bg-[#2d3435] px-3 py-2 font-label text-[10px] uppercase tracking-[0.16em] text-[#faf7f6] transition-colors duration-200" href="#home">Home</a>
+  <a class="mobile-bottom-link rounded-full px-3 py-2 font-label text-[10px] uppercase tracking-[0.16em] text-[#5f5e5e] transition-colors duration-200 hover:bg-[#efefef]" href="#work">Work</a>
+  <a class="mobile-bottom-link rounded-full px-3 py-2 font-label text-[10px] uppercase tracking-[0.16em] text-[#5f5e5e] transition-colors duration-200 hover:bg-[#efefef]" href="#about">About</a>
+  <a class="mobile-bottom-link rounded-full px-3 py-2 font-label text-[10px] uppercase tracking-[0.16em] text-[#5f5e5e] transition-colors duration-200 hover:bg-[#efefef]" href="#contact">Contact</a>
 </nav>
+
+<script is:inline>
+  const mobileNav = document.getElementById('mobile-bottom-nav');
+
+  if (mobileNav) {
+    const baseClass =
+      'mobile-bottom-link rounded-full px-3 py-2 font-label text-[10px] uppercase tracking-[0.16em] transition-colors duration-200';
+    const activeClass = 'bg-[#2d3435] text-[#faf7f6]';
+    const inactiveClass = 'text-[#5f5e5e] hover:bg-[#efefef]';
+
+    const links = Array.from(mobileNav.querySelectorAll('a[href^="#"]'));
+    const sections = links
+      .map((link) => {
+        const id = link.getAttribute('href')?.replace('#', '');
+        if (!id) return null;
+        return { id, link, section: document.getElementById(id) };
+      })
+      .filter((entry) => entry && entry.section);
+
+    const setActive = (activeId) => {
+      links.forEach((link) => {
+        const id = link.getAttribute('href')?.replace('#', '');
+        link.className = `${baseClass} ${id === activeId ? activeClass : inactiveClass}`;
+      });
+    };
+
+    const updateByScroll = () => {
+      if (window.innerWidth >= 768 || sections.length === 0) return;
+
+      const marker = window.scrollY + window.innerHeight * 0.35;
+      let current = sections[0];
+
+      sections.forEach((item) => {
+        if (item.section.offsetTop <= marker) current = item;
+      });
+
+      setActive(current.id);
+    };
+
+    links.forEach((link) => {
+      link.addEventListener('click', () => {
+        const id = link.getAttribute('href')?.replace('#', '');
+        if (id) setActive(id);
+      });
+    });
+
+    window.addEventListener('scroll', updateByScroll, { passive: true });
+    window.addEventListener('resize', updateByScroll);
+    window.addEventListener('hashchange', updateByScroll);
+    updateByScroll();
+  }
+</script>
