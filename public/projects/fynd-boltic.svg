@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Fynd Boltic customer support hero graphic</title>
+  <desc id="desc">Fynd Boltic styled hero graphic featuring AI workflow automation for customer support.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f4f4f5"/>
+      <stop offset="1" stop-color="#efeff1"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#e9b365"/>
+      <stop offset="1" stop-color="#ee4628"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect x="0" y="0" width="1600" height="74" fill="#ffffff" stroke="#e5e7eb"/>
+  <text x="64" y="47" font-family="Manrope, Arial, sans-serif" font-size="42" font-weight="700" fill="#14171b">Fynd Boltic</text>
+
+  <rect x="1180" y="16" width="140" height="44" rx="10" fill="#fff" stroke="#ff8e72"/>
+  <text x="1210" y="44" font-family="Manrope, Arial, sans-serif" font-size="22" font-weight="600" fill="#ff5a2f">Book demo</text>
+  <rect x="1332" y="16" width="130" height="44" rx="10" fill="#ff5a2f"/>
+  <text x="1368" y="44" font-family="Manrope, Arial, sans-serif" font-size="22" font-weight="600" fill="#fff">Sign up</text>
+
+  <rect x="350" y="140" width="900" height="44" rx="22" fill="#f8f8f8" stroke="#ffd0bf"/>
+  <text x="390" y="168" font-family="Manrope, Arial, sans-serif" font-size="18" font-weight="600" fill="#ff5a2f">New</text>
+  <text x="454" y="168" font-family="Manrope, Arial, sans-serif" font-size="18" fill="#333842">Be the first to unlock seamless API workflows with Fynd Boltic Gateway</text>
+
+  <rect x="450" y="214" width="220" height="54" rx="27" fill="#f5f5f5" stroke="#e2e2e2"/>
+  <rect x="682" y="214" width="230" height="54" rx="27" fill="#f5f5f5" stroke="#e2e2e2"/>
+  <text x="500" y="246" font-family="Manrope, Arial, sans-serif" font-size="20" fill="#606873">G2 reviews</text>
+  <text x="730" y="246" font-family="Manrope, Arial, sans-serif" font-size="20" fill="#606873">#1 Product of Day</text>
+
+  <text x="380" y="390" font-family="Manrope, Arial, sans-serif" font-size="72" font-weight="700" fill="#101318">AI Workflow Automation for</text>
+  <text x="505" y="480" font-family="Manrope, Arial, sans-serif" font-size="84" font-weight="700" fill="url(#accent)">Customer Support</text>
+
+  <text x="450" y="548" font-family="Manrope, Arial, sans-serif" font-size="24" fill="#6a727c">Streamline your support processes with intelligent automation that saves</text>
+  <text x="676" y="584" font-family="Manrope, Arial, sans-serif" font-size="24" fill="#6a727c">time and reduces costs</text>
+
+  <rect x="650" y="618" width="130" height="46" rx="10" fill="#fff" stroke="#ff8e72"/>
+  <text x="669" y="648" font-family="Manrope, Arial, sans-serif" font-size="20" font-weight="600" fill="#ff5a2f">Book demo</text>
+  <rect x="792" y="618" width="120" height="46" rx="10" fill="#ff5a2f"/>
+  <text x="820" y="648" font-family="Manrope, Arial, sans-serif" font-size="20" font-weight="600" fill="#fff">Sign up</text>
+
+  <text x="597" y="755" font-family="Manrope, Arial, sans-serif" font-size="44" font-weight="700" fill="#171b20">Trusted by builders and teams</text>
+
+  <rect x="0" y="804" width="1600" height="96" fill="#f5f5f6" stroke="#e2e4e7"/>
+  <g fill="#1d2228" font-family="Manrope, Arial, sans-serif" font-size="46" font-weight="700">
+    <text x="130" y="867">nexus</text>
+    <text x="445" y="867">AJIO</text>
+    <text x="700" y="867">THE SLEEP COMPANY</text>
+    <text x="1140" y="867">tira</text>
+    <text x="1325" y="867">The[Pant]Project</text>
+  </g>
+</svg>
